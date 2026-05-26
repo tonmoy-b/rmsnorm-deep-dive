@@ -1,0 +1,48 @@
+# =========================
+# Python Build Artifacts
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+
+# =========================
+# C++ / CUDA Build Artifacts
+# =========================
+*.o
+*.obj
+*.so
+*.pyd
+*.dll
+*.exe
+*.lib
+*.exp
+
+# =========================
+# Virtual Environments
+# =========================
+venv/
+env/
+.env
+
+# =========================
+# CMake (if used later)
+# =========================
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+Makefile
+cmake_install.cmake
+compile_commands.json
+
+# =========================
+# IDEs and Editors
+# =========================
+.vscode/
+.idea/
+*.swp
+*.suo
+*.user

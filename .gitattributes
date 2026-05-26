@@ -1,0 +1,43 @@
+# Auto-detect text files and perform LF normalization
+* text=auto eol=lf
+
+# =========================
+# Source Code (Force LF)
+# =========================
+*.py text eol=lf
+*.cpp text eol=lf
+*.cu text eol=lf
+*.cuh text eol=lf
+*.c text eol=lf
+*.h text eol=lf
+*.hpp text eol=lf
+
+# =========================
+# Configuration & Docs (Force LF)
+# =========================
+*.txt text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+.gitignore text eol=lf
+
+# =========================
+# Scripts
+# =========================
+# Shell scripts MUST have LF to run in Docker/Linux
+*.sh text eol=lf
+# Windows batch scripts need CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# =========================
+# Binaries (Do not touch)
+# =========================
+*.png binary
+*.jpg binary
+*.so binary
+*.pyd binary
+*.dll binary
+*.pt binary
+*.pth binary
