@@ -49,7 +49,17 @@ pybind11_add_module(_C MODULE
   csrc/rmsnorm_cuda.cu
 )
 
-target_link_libraries(_C PRIVATE ${TORCH_LIBRARIES} Python::Module)
+#target_link_libraries(_C PRIVATE ${TORCH_LIBRARIES} Python::Module)
+# torch_python.lib provides the pybind11 type_caster<at::Tensor> specialization.
+# It's not in ${TORCH_LIBRARIES} by default; we have to add it explicitly.
+find_library(TORCH_PYTHON_LIBRARY torch_python
+             PATHS "${TORCH_INSTALL_PREFIX}/lib"
+             NO_DEFAULT_PATH REQUIRED)
+target_link_libraries(_C PRIVATE
+  ${TORCH_LIBRARIES}
+  ${TORCH_PYTHON_LIBRARY}
+  Python::Module
+)
 target_include_directories(_C PRIVATE ${TORCH_INCLUDE_DIRS})
 target_compile_definitions(_C PRIVATE ${TORCH_CXX_FLAGS})
 
